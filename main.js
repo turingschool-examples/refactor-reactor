@@ -3,6 +3,15 @@ function calculateTip(total, percentage) {
   return tipAmount;
 };
 
+function checkGreeting(greeting){
+  if (greeting === undefined) {
+    return "See ya!"
+  } else {
+    return "Hello!"
+  }
+};
+
 module.exports = {
-  calculateTip
+  calculateTip,
+  checkGreeting
 };
