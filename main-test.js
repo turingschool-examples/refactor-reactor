@@ -4,7 +4,8 @@ var {
   calculateTip,
   checkGreeting,
   checkDogNamesForGreg,
-  checkDogNamesForGary
+  checkDogNamesForGary,
+  updateCartItem
 } = require("./main.js");
 
 describe("Refactor Reactor", function(){
@@ -50,5 +51,29 @@ describe("Refactor Reactor", function(){
     var hasNoGary = checkDogNamesForGary(dogsWithoutGary);
 
     assert.equal(hasNoGary, false);
+  });
+
+  it("updates the cart item with new quantity", function(){
+    var cartItem = {
+      name: "Sandals",
+      quantity: 2,
+      price: 15
+    }
+
+    var adjustedCartItem = updateCartItem(cartItem, "quantity", 1);
+
+    assert.deepEqual(adjustedCartItem, {name: "Sandals", quantity: 1, price: 15});
+  });
+
+  it("updates the cart item with new price", function(){
+    var cartItem = {
+      name: "Sandals",
+      quantity: 2,
+      price: 15
+    }
+
+    var adjustedCartItem = updateCartItem(cartItem, "price", 13);
+
+    assert.deepEqual(adjustedCartItem, {name: "Sandals", quantity: 2, price: 13});
   });
 });

@@ -21,7 +21,7 @@ function  checkDogNamesForGreg(names ){
     return containsGreg;
 };
 
-function checkDogNamesForGary(names){
+function checkDogNamesForGary (names) {
   var containsGreg=false;
   for(i=0;i<names.length;i++){
     if(names[i]==="Gary"){
@@ -30,11 +30,15 @@ function checkDogNamesForGary(names){
   }return containsGreg;
 };
 
-
+function updateCartItem(i, k, v) {
+  i[k] = v;
+  return i;
+}
 
 module.exports = {
   calculateTip,
   checkGreeting,
   checkDogNamesForGreg,
-  checkDogNamesForGary
+  checkDogNamesForGary,
+  updateCartItem
 };
